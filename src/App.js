@@ -1,23 +1,46 @@
-import logo from './logo.svg';
+
 import './App.css';
+import {useEffect, useState} from "react";
+import {getUsers,getUser} from "./services/UserServices";
+
+import UsersDetails from "./components/UsersDetails";
+
 
 function App() {
+let [users,setUsers]=useState([]);
+let [user,setUser]=useState(null);
+
+  useEffect(() => {
+    getUsers().then(value => setUsers(value.data));
+  },[])
+
+    const chooseUser = (id)=>{
+      getUser(id).then(value => setUser(value.data))
+    }
+
+
+
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        <div>
+            <div>{user?.name} {user?.username} {user?.email}</div>
+            <div>{user!=null && <button onClick={()=>{
+            }}>Clear</button>}</div>
+
+        </div>
+      <div>{users.map(value => <UsersDetails
+          key={value.id}
+          id={value.id}
+          name={value.name}
+
+          chooseUser={chooseUser}
+
+      />)}
+          </div>
+
     </div>
   );
 }

@@ -13,10 +13,13 @@ const getUser = (id) => {
   return axionIntance.get('/users/'+ id)
 }
 
+const getPosts = (id) => {
+    return axionIntance.get('/posts?userId='+id)
+}
 
 
 
-export {getUsers, getUser}
+export {getUsers, getUser, getPosts}
 
 
 

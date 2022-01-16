@@ -1,0 +1,12 @@
+.UsersDetails{
+    display: flex;
+    vertical-align: top;
+
+}
+.ButtonDetails{
+    width: auto;
+    height: 30px;
+    margin-top: 1.5%;
+    margin-left: 10px;
+
+}

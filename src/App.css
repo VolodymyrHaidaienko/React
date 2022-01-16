@@ -1,0 +1,14 @@
+
+.chooseUser{
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+
+
+}
+
+.ButtonUserDetails{
+    width: auto;
+    height: auto;
+    margin-left: 10px;
+}

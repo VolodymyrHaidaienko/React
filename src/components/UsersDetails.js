@@ -1,15 +1,19 @@
+import './UserDetails.css'
 export default function UsersDetails(props){
+
     let {id,name}=props;
 
 
 
 
     return(
-        <div>
+        <div className='UsersDetails'>
+
             <h2>{id} - {name}</h2>
             <button onClick={()=>{
                 props.chooseUser(id)
-            }}>details</button>
+            }} className='ButtonDetails'>details</button>
+
 
         </div>
     );

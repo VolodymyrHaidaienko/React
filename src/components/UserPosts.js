@@ -1,5 +1,5 @@
 export default function UsersPosts(props){
-    let {id,userid,title}=props
+    let {id,title}=props
     console.log(props)
 
 

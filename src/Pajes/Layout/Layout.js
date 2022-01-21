@@ -9,6 +9,7 @@ export default function Layout() {
                     <li><Link to={'users'}>user page</Link></li>
                     <li><Link to={'posts'}>post page</Link></li>
                     <li><Link to={'comments'}>comments</Link></li>
+                    <li><Link to={'albums'}>albums</Link></li>
                 </ul>
             </div>
 

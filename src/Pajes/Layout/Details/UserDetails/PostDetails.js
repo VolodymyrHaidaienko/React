@@ -1,9 +1,10 @@
 import {useLocation} from "react-router-dom";
 
 
-export default function PostDetails(item) {
+export default function PostDetails() {
     let location = useLocation()
     let {state} = location
+
 
 
 

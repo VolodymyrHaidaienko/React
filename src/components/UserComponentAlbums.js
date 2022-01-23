@@ -1,5 +1,5 @@
 
-export default function UserComponentPhoto({item}){
+export default function UserComponentAlbums({item}){
     let {id, title}=item
 
     return(

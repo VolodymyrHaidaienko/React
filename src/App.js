@@ -6,8 +6,10 @@ import Posts from "./Pajes/Layout/Details/Posts";
 import Comments from "./Pajes/Layout/Details/Comments";
 import UserDetails from "./Pajes/Layout/Details/UserDetails/UserDetails";
 import PostDetails from "./Pajes/Layout/Details/UserDetails/PostDetails";
-import PhotoDetails from "./Pajes/Layout/Details/UserDetails/PhotoDetails";
 import Albums from "./Pajes/Layout/Details/Albums";
+import PostPageUser from "./Pajes/Layout/Details/UserDetails/PostPageUser";
+import UserDetailAlbum from "./Pajes/Layout/Details/UserDetails/UserDetailAlbum";
+import UserAlbum from "./components/UserAlbum";
 
 
 function App() {
@@ -22,16 +24,21 @@ function App() {
             <Routes>
 
                 <Route path={'/layout'} element={<Layout/>}>
+
                     <Route path={'users'} element={<Users/>}>
-                        <Route path={':id'} element={<UserDetails/>}/>
+                        <Route path={':id'} element={<UserDetails/>}>
+                            <Route path={':posts'} element={<PostPageUser/>}/>
+                            <Route path={'albums'} element={<UserAlbum/>}/>
+                        </Route>
                     </Route>
-                    <Route path={'albums'} element={<Albums/>}>
-                        <Route path={':id'} element={<PhotoDetails/>}/>
-                    </Route>
+
+                    <Route path={'albums'} element={<Albums/>}/>
+
 
                     <Route path={'posts'} element={<Posts/>}>
                         <Route path={':id'} element={<PostDetails/>}/>
                     </Route>
+
                     <Route path={'comments'} element={<Comments/>}/>
                 </Route>
 

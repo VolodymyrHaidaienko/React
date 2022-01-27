@@ -1,10 +1,13 @@
+import {Link} from "react-router-dom";
 
-export default function UserComponentAlbums({item}){
-    let {id, title}=item
+export default function UserComponentAlbums({item}) {
+    let {id, title} = item
 
-    return(
+
+    return (
         <div>
-            {id} {title}
+            {id} {title} <Link to={id + '/photos'} state={{...item}}><button>Click photos</button></Link>
+
         </div>
     )
 }

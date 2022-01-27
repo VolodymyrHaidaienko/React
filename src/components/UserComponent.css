@@ -1,0 +1,6 @@
+.UserComponent div{
+    display: flex;
+}
+.UserComponent button{
+    margin: 5px;
+}

@@ -1,10 +1,11 @@
 import ApiService from "../../../Servies/servies";
-
-import {Outlet} from "react-router-dom";
 import {useEffect, useState} from "react";
 import UserComponentAlbums from "../../../components/UserComponentAlbums";
+import {Outlet} from "react-router-dom";
+import './Albums.css'
+import './AlbumsPhotos.css'
 
-export default function Albums(){
+export default function Albums() {
     let apiService = new ApiService('albums')
     let [users, setusers] = useState([])
     useEffect(() => {
@@ -12,16 +13,15 @@ export default function Albums(){
     }, [])
 
     return (
-        <div>
-            {
-                users.map(value => <UserComponentAlbums key={value.id} item={value}/>)
-            }
-
-
+        <div className='Albums'>
             <div>
+                {
+                    users.map(value => <UserComponentAlbums key={value.id} item={value}/>)
+                }
+            </div>
+            <div className='AlbumsPhotos'>
                 <Outlet/>
             </div>
-
 
         </div>
     )

@@ -1,7 +1,7 @@
-export default function UserDetailAlbum(item){
-let{item:{id, title}}=item
+export default function UserDetailAlbum(item) {
+    let {item: {id, title}} = item
 
-    return(
+    return (
         <div>
             {id} {title}
         </div>

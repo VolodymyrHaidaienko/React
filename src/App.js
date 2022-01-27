@@ -8,8 +8,9 @@ import UserDetails from "./Pajes/Layout/Details/UserDetails/UserDetails";
 import PostDetails from "./Pajes/Layout/Details/UserDetails/PostDetails";
 import Albums from "./Pajes/Layout/Details/Albums";
 import PostPageUser from "./Pajes/Layout/Details/UserDetails/PostPageUser";
-import UserDetailAlbum from "./Pajes/Layout/Details/UserDetails/UserDetailAlbum";
 import UserAlbum from "./components/UserAlbum";
+import UserDetailPhotos from "./Pajes/Layout/Details/UserDetails/UserDetailPhotos";
+
 
 
 function App() {
@@ -32,14 +33,16 @@ function App() {
                         </Route>
                     </Route>
 
-                    <Route path={'albums'} element={<Albums/>}/>
-
-
                     <Route path={'posts'} element={<Posts/>}>
                         <Route path={':id'} element={<PostDetails/>}/>
                     </Route>
 
                     <Route path={'comments'} element={<Comments/>}/>
+
+                    <Route path={'albums'} element={<Albums/>}>
+                        <Route path={':id/photos'} element={<UserDetailPhotos/>}/>
+                    </Route>
+
                 </Route>
 
             </Routes>

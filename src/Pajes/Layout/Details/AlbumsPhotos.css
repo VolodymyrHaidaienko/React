@@ -1,0 +1,8 @@
+.AlbumsPhotos{
+    display: flex;
+}
+.AlbumsPhotos div{
+    display: block;
+    text-align: right;
+
+}

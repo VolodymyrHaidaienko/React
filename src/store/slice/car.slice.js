@@ -18,7 +18,8 @@ export const getAllCars = createAsyncThunk(
     'cars/getAllCars',
     async (_,{rejectWithValue}) => {
         try {
-            const cars = await axios.get('http://91.201.233.14/api/v2/cars').then(value => value.data)
+            const cars = await carService.getAll()
+                // axios.get('http://91.201.233.14/api/v2/cars').then(value => value.data)
             return cars;
         }catch (e){
             return rejectWithValue(e.message)

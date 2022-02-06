@@ -7,6 +7,7 @@ import {getAllCars} from "../../store/slice/car.slice";
 const Cars = () => {
     const {cars} = useSelector(state => state.cars)
     const dispatch = useDispatch();
+
     useEffect(() => {
         dispatch(getAllCars())
     },[]);

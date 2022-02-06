@@ -1,8 +1,9 @@
 const Car = (car) => {
-    const {id, model, year, price} = car.cars;
+
+    const {id, model, price, year} = car;
     return (
         <div>
-            {id} {model} {year} {price}
+            {id} {model} {price} {year}
         </div>
     )
 }

@@ -3,16 +3,21 @@ import {Car} from "../Car/Car";
 import {useEffect} from "react";
 import {getAllCars} from "../../store/slice/car.slice";
 
-const Cars = ()=>{
+
+const Cars = () => {
     const {cars} = useSelector(state => state.cars)
-    // const dispatch = useDispatch();
-    // useEffect(() => {
-    //     dispatch(getAllCars())
-    // })
-    return(
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(getAllCars())
+    },[]);
+
+
+
+    return (
         <div>
             {
-                cars.map(car=> <Car key={car.id} cars={car}/>)
+                cars.map(car => <Car key={car.id} cars={car}/>)
+
             }
 
         </div>

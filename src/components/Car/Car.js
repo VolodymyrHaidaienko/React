@@ -1,5 +1,4 @@
 const Car = (car) => {
-    console.log(car.cars)
 
     const {id, model, price, year} = car.cars;
     return (
